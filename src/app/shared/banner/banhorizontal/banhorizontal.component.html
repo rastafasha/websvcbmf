@@ -1,0 +1,26 @@
+<div class="bannerH">
+    <!-- <owl-carousel-o [options]="banH" class=" card ">
+        <ng-template carouselSlide class="item" *ngFor="let banhorizontal of banhorizontals; let i = index">
+            <a href="{{banhorizontal.enlace}}" target="{{banhorizontal.target}}">
+                <img [src]="banhorizontal.image" alt="{{banhorizontal.titulo}}">
+            </a>
+        </ng-template>
+    </owl-carousel-o> -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    
+        <div class="carousel-inner" >
+            <div class="carousel-item " *ngFor="let banner of banhorizontals;let i=index " [ngClass]="(i === 0) ? 'active' : ''">
+                <a href="{{banner.url}}" target="{{banner.target}}" class="btn btn-outline-dann">
+                    <div *ngIf="!banner.img">
+                        <img src="./assets/img/no-image.jpg" >
+                    </div>
+                    <div *ngIf="banner.img">
+                        <img [src]="banner.image " alt=" {{banner.titulo}}">
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
