@@ -1,8 +1,9 @@
 export class Contact {
     id: number;
     name: string;
-    ciudad: string;
     email: string;
+    subject: string;
     phone?: string;
-    message: string;
+    movil?: string;
+    comment: string;
 }

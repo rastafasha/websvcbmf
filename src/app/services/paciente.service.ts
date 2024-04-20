@@ -31,7 +31,7 @@ export class PacienteService {
 
   getRecentPacientes() {
     let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});
-    let URL = this.serverUrl+"/areapaciente/";
+    let URL = this.serverUrl+"/areapaciente/recientes";
     return this.http.get(URL, {headers:headers});
     
   }

@@ -5,12 +5,13 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpBackend } from '@angula
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { AccountService } from '../services/account.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CmspageService {
-
+  public contact:Contact;
   ServerUrl = environment.apiUrl;
   errorData: {};
 
@@ -24,20 +25,17 @@ export class CmspageService {
       this.http = new HttpClient(handler);
   }
 
+  // get status(): 'PENDING' | 'RESOLVED' {
+  //   return this.contact.status!;
+  // }
+
 
   contactForm(formdata: Contact) {
-    return this.http.post<Contact>(this.ServerUrl + 'api_contact/contact', formdata, this.httpOptions)
+    return this.http.post<Contact>(this.ServerUrl + '/contact/form', formdata,  this.httpOptions)
     .pipe(
       catchError(this.handleError)
     );
   }
-  registroForm(formdata: Subcriptores) {
-    return this.http.post<Subcriptores>(this.ServerUrl + 'api_contact/subcritore', formdata, this.httpOptions)
-    .pipe(
-      catchError(this.handleError)
-    );
-  }
-
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

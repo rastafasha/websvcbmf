@@ -31,7 +31,7 @@ const routes: Routes = [
   {path: 'servicios-de-cirugia-en-el-sistema-publico-de-salud', component: ServiciosComponent},
 
   {path: 'blog', component: BlogpostListComponent},
-  {path: 'blog/:id', component: BlogpostDetailComponent},
+  {path: 'blog/:slug', component: BlogpostDetailComponent},
 
   {path: 'revista', component: RevistaComponent},
   {path: 'contacto', component: ContactFormComponent},

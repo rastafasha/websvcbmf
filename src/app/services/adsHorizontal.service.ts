@@ -20,6 +20,14 @@ export class BanhorizontalService {
     return this.http.get(URL, {headers:headers});
     
   }
+  getBanhorizontalsActivo() {
+    let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});
+    let URL = this.serverUrl+"/banhorizontal/activos";
+    return this.http.get(URL, {headers:headers});
+    
+  }
+
+
 
   getBanhorizontal(id: any) {
     let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});

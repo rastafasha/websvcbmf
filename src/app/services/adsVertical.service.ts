@@ -20,6 +20,12 @@ export class BanverticalService {
     return this.http.get(URL, {headers:headers});
     
   }
+  getBanverticalsActive() {
+    let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});
+    let URL = this.serverUrl+"/banvertical/activos";
+    return this.http.get(URL, {headers:headers});
+    
+  }
 
   getBanvertical(id: any) {
     let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});

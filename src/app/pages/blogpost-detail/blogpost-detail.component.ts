@@ -21,6 +21,7 @@ export class BlogpostDetailComponent implements OnInit {
 
   blog_id: any;
   blog_selected: any;
+  slug: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,24 +33,35 @@ export class BlogpostDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.ativatedRoute.params.subscribe((resp:any)=>{
-      console.log(resp);
-      this.blog_id = resp.id;
-     })
-     this.showUser();
+
+    const slug = this.ativatedRoute.snapshot.paramMap.get('slug');
+
+    this.slug = slug;
+    this.blogService.getPostBySlug(this.slug).subscribe(
+      (res:any) => {
+        this.blog_selected = res.blog;
+        // console.log(this.blog_selected);
+      }
+    );
+
+    // this.ativatedRoute.params.subscribe((resp:any)=>{
+    //   console.log(resp);
+    //   this.blog_id = resp.id;
+    //  })
+    //  this.showUser();
     window.scrollTo(0,0);
 
     //this.titleService.setTitle('SVCBMF - Blog Detail');
   }
 
-  showUser(){
-    this.blogService.getBlog(this.blog_id).subscribe((resp:any)=>{
-      console.log(resp);
-      this.blog_selected = resp.blog;
+  // showUser(){
+  //   this.blogService.getBlog(this.blog_id).subscribe((resp:any)=>{
+  //     console.log(resp);
+  //     this.blog_selected = resp.blog;
       
       
-    })
-  }
+  //   })
+  // }
 
   public onReady( editor ) {
     editor.ui.getEditableElement().parentElement.insertBefore(

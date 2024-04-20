@@ -2,10 +2,9 @@ export class Blog {
     id: number;
     title: string;
     autor: string;
-    seo_title: string;
     user_id: number;
     description: string;
-    image: string;
+    avatar: string;
     video: string;
     slug: string;
     is_featured: boolean;

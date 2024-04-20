@@ -19,12 +19,13 @@
                 <div class=" card cardblog">
                     <div class="card-body ">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-5 imgnott nopadd" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}"></div>
+                            <div class="col-xs-12 col-sm-5 imgnott nopadd" [ngStyle]="{'background-image': 'url(' + blog.avatar + ')'}"></div>
                             <div class="col-xs-12 col-sm-7" style="margin-top: 10px;">
-                                <a [routerLink]="['/blog', blog.id]">
+                                <a [routerLink]="['/blog', blog.slug]">
                                     <h5>{{blog.title}}</h5>
                                 </a>
-                                <p>{{blog.short_desc}}</p>
+                                <!-- {{blog.description}} -->
+                                <p [innerHtml]="blog.description | safe: 'html'"></p>
                             </div>
                         </div>
                     </div>

@@ -28,8 +28,8 @@ ascending = true;
 
   ngOnInit() {
 
-    this.blogService.getBlogs().subscribe((resp:any)=>{
-      this.blogs = resp.blogs.data;
+    this.blogService.getFeaturedBlogs().subscribe((resp:any)=>{
+      this.blogs = resp.blogsdestacados.data;
     })
 
   }

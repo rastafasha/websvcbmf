@@ -55,17 +55,18 @@ export class DirectorioComponent implements OnInit {
   }
 
   getDirectories(): void {
-    this.directorioService.getDirectorios().subscribe(
-      res =>{
-        this.doctores = res;
-        error => this.error = error;
-        console.log(this.doctores);
-      }
-    );
+    this.directorioService.getDirectorios().subscribe((resp:any)=>{
+      this.doctores = resp.directories.data;
+    })
   }
 
   toggleClass(id: number){
     this.classApplied = !this.classApplied;
+  }
+
+  public PageSize(): void {
+    this.getDirectories();
+    this.query = '';
   }
 
 

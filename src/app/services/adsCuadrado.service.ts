@@ -20,6 +20,12 @@ export class BancuadradoService {
     return this.http.get(URL, {headers:headers});
     
   }
+  getBancuadradosActivos() {
+    let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});
+    let URL = this.serverUrl+"/bancuadrados/activos";
+    return this.http.get(URL, {headers:headers});
+    
+  }
 
   getBancuadrado(id: any) {
     let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});

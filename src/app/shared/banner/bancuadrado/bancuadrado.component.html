@@ -11,11 +11,11 @@
         <div class="carousel-inner" >
             <div class="carousel-item " *ngFor="let banner of bancuadrados;let i=index " [ngClass]="(i === 0) ? 'active' : ''">
                 <a href="{{banner.url}}" target="{{banner.target}}" class="btn btn-outline-dann">
-                    <div *ngIf="!banner.img">
+                    <div *ngIf="!banner.avatar">
                         <img src="./assets/img/no-image.jpg" >
                     </div>
-                    <div *ngIf="banner.img">
-                        <img [src]="banner.image " alt=" {{banner.titulo}}">
+                    <div *ngIf="banner.avatar">
+                        <img [src]="banner.avatar " alt=" {{banner.titulo}}">
                         
                     </div>
                 </a>

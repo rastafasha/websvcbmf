@@ -54,7 +54,7 @@ export class BanhorizontalComponent implements OnInit {
 
   
   ngOnInit() {
-    this.banhorizontalService.getBanhorizontals().subscribe((resp:any)=>{
+    this.banhorizontalService.getBanhorizontalsActivo().subscribe((resp:any)=>{
       this.banhorizontals = resp.banhorizontals.data;
     })
 

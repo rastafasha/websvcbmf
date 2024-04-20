@@ -25,10 +25,9 @@ ascending = true;
 
   ngOnInit() {
 
-    // this.configuracionService.getConfiguracions().subscribe(
-    //   (data: Configuracion) => this.configuracions = data,
-    //   error => this.error = error
-    // );
+    this.configuracionService.getSettings().subscribe((resp:any)=>{
+      this.configuracions =resp.settings.data;
+    })
 
   }
 

@@ -4,7 +4,8 @@
 
             <div class="directorio col-xs-12 col-sm-4 col-md-7 col-lg-8 mb-5">
                 <div class="blog-left fr-view" *ngIf="blog_selected ">
-                    <h1>{{blog_selected.title}}</h1>
+                    <h3>{{blog_selected.title}}</h3>
+                    <p>{{blog_selected.author.full_name}} | {{blog_selected.created_at | date:'mediumDate'}}</p>
 
 
                     <!--div *ngIf="blog_selected.video ">
@@ -16,15 +17,15 @@
                     <div *ngIf="!blog_selected.video">
                     </div-->
                     <div class="detail-img">
-                        <img src="{{blog_selected.image}}" alt="{{blog_selected.title}}" />
+                        <img src="{{blog_selected.avatar}}" alt="{{blog_selected.title}}" />
                     </div>
 
                     <div class="clear"></div> <br>
                     <h4>Compartir</h4>
                             
                     <share-buttons theme="circles-dark" [include]="['copy', 'facebook', 'email', 'messenger', 'mix', 'line', 'linkedin', 'pinterest', 'reddit', 'sms', 'telegram', 'tumblr', 'twitter', 'viber', 'vk', 'xing', 'whatsapp']" [showIcon]="true" [showText]="false"
-                                            url="https://svcbmf.org/curso/{{blog_selected.slug}}" description="{{blog_selected.description}}" twitterAccount="@svcbmfOficial" class="pt-1">
-                                        </share-buttons>
+                                url="https://svcbmf.com/blog/{{blog_selected.slug}}" description="{{blog_selected.description}}" twitterAccount="@SVCBMFOficial" class="pt-1">
+                            </share-buttons>
                     <div [innerHtml]="blog_selected.description | safe: 'html'"></div>
                 </div>
                 <ng-template #loading>

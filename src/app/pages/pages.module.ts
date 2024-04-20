@@ -21,6 +21,8 @@ import { CongresoformsModule } from '../congresoforms/congresoforms.module';
 import { SharedModule } from '../shared/shared.module';
 import { PipesModule } from '../pipes/pipes.module';
 
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+
 // import { QRCodeModule } from 'angular2-qrcode';
 
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -103,6 +105,7 @@ import { BannerModule } from '../shared/banner/banner.module';
     BannerModule,
     // QRCodeModule,
     OrderModule,
+    ShareButtonsModule
   ]
 })
 export class PagesModule { }

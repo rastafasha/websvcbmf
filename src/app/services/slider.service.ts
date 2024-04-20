@@ -24,6 +24,12 @@ export class SliderService {
     return this.http.get(URL, {headers:headers});
     
   }
+  getSlidersActivos() {
+    let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});
+    let URL = this.serverUrl+"/sliders/activos";
+    return this.http.get(URL, {headers:headers});
+    
+  }
 
   getSlider(id: any) {
     let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});

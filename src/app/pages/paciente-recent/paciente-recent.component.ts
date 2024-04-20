@@ -18,7 +18,7 @@ export class PacienteRecentComponent implements OnInit {
 
   ngOnInit() {
     this.pacienteService.getPacientes().subscribe((resp:any)=>{
-      this.pacientes = resp.data;
+      this.pacientes = resp.pacienterecientes;
     })
   }
 

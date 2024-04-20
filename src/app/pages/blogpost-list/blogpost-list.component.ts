@@ -35,8 +35,8 @@ export class BlogpostListComponent implements OnInit {
   ngOnInit() {
     //this.titleService.setTitle(this.title);
 
-    this.blogService.getBlogs().subscribe((resp:any)=>{
-      this.blogs = resp.blogs.data
+    this.blogService.getActiveBlogs().subscribe((resp:any)=>{
+      this.blogs = resp.blogs
     })
     window.scrollTo(0,0);
   }

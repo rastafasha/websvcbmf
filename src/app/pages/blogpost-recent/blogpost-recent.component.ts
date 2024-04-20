@@ -16,7 +16,7 @@ export class BlogpostRecentComponent implements OnInit {
 
   ngOnInit() {
     this.blogService.getRecentBlogs().subscribe((resp:any)=>{
-      this.blogs = resp.blogs.data
+      this.blogs = resp.blogsrecientes.data;
     })
     
   }

@@ -20,18 +20,38 @@ export class BlogService {
   }
   getRecentBlogs() {
    let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});
-    let URL = this.serverUrl+"/blog";
+    let URL = this.serverUrl+"/blog/recientes";
     return this.http.get(URL, {headers:headers});
   }
   getFeaturedBlogs() {
    let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});
-    let URL = this.serverUrl+"/blog";
+    let URL = this.serverUrl+"/blog/destacados";
     return this.http.get(URL, {headers:headers});
   }
+  getActiveBlogs() {
+   let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});
+    let URL = this.serverUrl+"/blog/activos";
+    return this.http.get(URL, {headers:headers});
+  }
+  
 
   getBlog(id: any) {
     let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});
     let URL = this.serverUrl+"/blog/show/"+id;
+    return this.http.get(URL,{headers:headers});
+  }
+
+  getPostByCategory(name: any) {
+
+    let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});
+    let URL = this.serverUrl+"/blog/category/"+name;
+    return this.http.get(URL,{headers:headers});
+
+  }
+
+  getPostBySlug(slug: any) {
+    let headers = new HttpHeaders({'Authorization': 'Bearer'+this.authService.token});
+    let URL = this.serverUrl+"/blog/show/slug/"+slug;
     return this.http.get(URL,{headers:headers});
   }
 

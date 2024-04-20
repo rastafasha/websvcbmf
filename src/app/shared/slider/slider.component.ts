@@ -19,7 +19,7 @@ export class SliderComponent implements OnInit {
 
   ngOnInit() {
 
-    this.sliderService.getSliders().subscribe((resp:any)=>{
+    this.sliderService.getSlidersActivos().subscribe((resp:any)=>{
       this.sliders = resp.sliders.data;
     })
 

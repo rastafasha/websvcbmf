@@ -10,6 +10,9 @@
 .iconologomenu {
     display: none;
 }
+.cursor{
+    cursor: pointer;
+}
 
 @media(max-width:768px) {
     .topdesk,
