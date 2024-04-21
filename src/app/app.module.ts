@@ -15,6 +15,8 @@ import { SharedModule } from './shared/shared.module';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { SharethisAngularModule } from 'sharethis-angular';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,13 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     SharedModule,
     CongresoformsModule,
     SharedModule,
-    CarouselModule
+    CarouselModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
